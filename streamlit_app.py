@@ -40,8 +40,8 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
 #adding new selector
-fruits_selected1 = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
-#fruits_selected2 = streamlit.multiselect("Thanks for adding ",['jackfruit'])
+add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
+streamlit.write("Thanks for adding ", add_my_fruit)
 #fruits_to_show = my_fruit_list.loc[fruits_selected1]
 
 import snowflake.connector
