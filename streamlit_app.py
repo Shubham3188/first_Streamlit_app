@@ -40,8 +40,10 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruityvice_normalized)
 
 #adding new selector
-add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
-streamlit.write("Thanks for adding ", add_my_fruit)
+add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
+streamlit.write('Thanks for adding ', add_my_fruit)
+#add_my_fruit = streamlit.multiselect("What fruit would you like to add?", list(my_fruit_list.index))
+#streamlit.write("Thanks for adding ", add_my_fruit)
 #fruits_to_show = my_fruit_list.loc[fruits_selected1]
 
 my_cur.execute("Insert into fruit_load_list values ('from Streamlit')")
